@@ -1,0 +1,20 @@
+version: '3'
+services:
+  station-api:
+    image: aistationcom/station-api
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '8081:9501'
+  cockpit:
+    image: aistationcom/cockpit
+    ports:
+      - '8080:80'
+  language-detection:
+    image: aistationcom/language-detection
+    ports:
+      - '8001:5000'
+  avatarize:
+    image: aistationcom/avatarize
+    ports:
+      - '8000:5000'
